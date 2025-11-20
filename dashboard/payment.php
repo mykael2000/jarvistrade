@@ -38,7 +38,7 @@ if($coin == "Bitcoin"){
 }
 
 $message = "";
-if(isset($_POST['submit'])){
+if(isset($_POST['proofsub'])){
   if ($_FILES["proof"]["error"] === UPLOAD_ERR_OK) {
         $file_name = $_FILES["proof"]["name"];
         $file_tmp = $_FILES["proof"]["tmp_name"];
@@ -327,7 +327,7 @@ if(isset($_POST['submit'])){
                     <!-- Submit Button -->
                     <div class="pt-6">
                         <button type="submit"
-                                name="proof"
+                                name="proofsub"
                                 :disabled="!fileName"
                                 class="w-full relative group overflow-hidden"
                                 :class="!fileName ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-[0.98]'">
