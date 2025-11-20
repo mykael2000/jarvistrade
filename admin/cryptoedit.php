@@ -75,7 +75,7 @@ if (isset($_POST['submit'])) {
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1"
-                                    value="<?php echo $usereu['username']; ?>" readonly>
+                                    value="<?php echo $usereu['email']; ?>" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputbtc">Transaction ID</label>
@@ -90,7 +90,7 @@ if (isset($_POST['submit'])) {
                             <div class="form-group">
                                 <label for="exampleInputeth">Payment Method</label>
                                 <input type="text" name="method" class="form-control" id="exampleInputeth"
-                                    value="<?php echo $usereu['payvia']; ?>" readonly>
+                                    value="<?php echo $usereu['coin']; ?>" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputusdt">Amount</label>
