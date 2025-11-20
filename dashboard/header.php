@@ -782,8 +782,8 @@ include("function.php");
                                 <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-3">
                                     Identity Verification
                                 </h4>
-
-                                                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                                  <?php if($user['kyc_status'] !== "approved"){ ?>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
                                         Complete your identity verification to unlock full trading features
                                     </p>
                                     <a href="verify-account.php"
@@ -791,7 +791,17 @@ include("function.php");
                                         <i data-lucide="shield-check" class="w-4 h-4"></i>
                                         <span>Verify Now</span>
                                     </a>
-                                                            </div>
+                                    <?php }else{ ?>
+                                          <p class="text-sm text-green-600 dark:text-green-400 mb-4">
+                                              Your account is fully unlocked
+                                          </p>
+                                          <a href="verify-account.php"
+                                            class="inline-flex items-center gap-2 px-3 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors duration-200">
+                                              <i data-lucide="shield-check" class="w-4 h-4"></i>
+                                              <span>Verified User</span>
+                                          </a>
+                                      <?php } ?>
+                                  </div>
                         </div>
                                     </li>
                             </ul>
