@@ -5,9 +5,10 @@ $sqldepo = "SELECT * FROM kyc_submissions ORDER BY created_at DESC";
 $querydepo = mysqli_query($conn, $sqldepo);
 
 if(isset($_POST['Approve'])){
-    $user_id = $_POST['id'];
+    $id = $_POST['id'];
+    $user_id = $_POST['userid'];
     $status = "approved";
-    $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE user_id = '$user_id'";
+    $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE id = '$id'";
     $querykyc = mysqli_query($conn, $sqlkyc);
 
     $sqlkycu = "UPDATE users set kyc_status = '$status' WHERE id = '$user_id'";
@@ -16,9 +17,10 @@ if(isset($_POST['Approve'])){
 }
 
 if(isset($_POST['Reject'])){
-    $user_id = $_POST['id'];
+    $id = $_POST['id'];
+    $user_id = $_POST['userid'];
     $status = "rejected";
-    $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE user_id = '$user_id'";
+    $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE id = '$id'";
     $querykyc = mysqli_query($conn, $sqlkyc);
 
     $sqlkycu = "UPDATE users set kyc_status = '$status' WHERE id = '$user_id'";
@@ -103,10 +105,12 @@ if(isset($_POST['Reject'])){
                                 <?php if($depo['status'] == "pending"){ ?>
                                 <td><form action="" method="POST">
                                     <input type="hidden" name="id" value="<?php echo $depo['id']; ?>">
+                                    <input type="hidden" name="userid" value="<?php echo $depo['user_id']; ?>">
                                     <button class="btn btn-success" type="submit" name="Approve">Approve</button>
                                 </form></td>
                                 <td><form action="" method="POST">
                                     <input type="hidden" name="id" value="<?php echo $depo['id']; ?>">
+                                    <input type="hidden" name="userid" value="<?php echo $depo['user_id']; ?>">
                                     <button class="btn btn-danger" type="submit" name="Reject">Reject</button>
                                 </form></td>
                                 <?php }else{ ?>
