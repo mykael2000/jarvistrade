@@ -1,12 +1,17 @@
 <?php include("header.php"); 
 
+if($_GET['code'] !== "authenticated"){
+    header("location: withdrawals.php");
+}
+$message = "";
 if(isset($_POST['withdraw'])){
-  $withdrawal_code = $_POST['withdrawal_code'];
-  if($user['withdrawal_pin'] !== $withdrawal_code){
-    $message = "<span class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>Withdrawal Code is incorrect!</span>";
-  }else{
-    header("location: place_withdrawal.php?code=approved");
-  }
+  $amount = $_POST['amount'];
+  $payment_method = $_POST['payment_method'];
+  $address = $_POST['address'];
+  
+  $sqlwith = "INSERT into withdrawals (user_id, tranx_id, email, amount, coin, address, status) VALUES ('$user_id','$tranx_id','$user_email','$amount','$coin','$address','$status')";
+  $querywith = mysqli_query($conn, $sqlwith);
+
 }
 ?>
   <!-- Sidebar overlay for mobile -->
@@ -66,8 +71,8 @@ if(isset($_POST['withdraw'])){
                             <i data-lucide="shield-check" class="w-6 h-6 sm:w-8 sm:h-8 text-amber-400"></i>
                         </div>
                         <div>
-                            <h2 class="text-xl sm:text-2xl font-bold text-white">Security Verification Required</h2>
-                            <p class="text-gray-300 mt-1 text-sm sm:text-base">Additional verification needed to process your withdrawal</p>
+                            <h2 class="text-xl sm:text-2xl font-bold text-white">Withdrawal Request</h2>
+                            <p class="text-gray-300 mt-1 text-sm sm:text-base">Kindly fill the form to process your withdrawal</p>
                         </div>
                     </div>
                 </div>
@@ -81,26 +86,11 @@ if(isset($_POST['withdraw'])){
                             </div>
                             <div class="sm:ml-4 flex-1">
                                 <div class="text-sm sm:text-base font-medium text-amber-300 mb-2">
-                                    Withdrawal Code Required
+                                    Withdrawal Request
                                 </div>
                                 <p class="text-xs sm:text-sm text-amber-200 leading-relaxed">
-                                    For your security, this withdrawal requires a verification code. Please contact our customer support team via live chat or email at
-                                    <a href="mailto:admin@jarvistradepro.com" class="font-semibold underline hover:text-amber-100 transition-colors">admin@jarvistradepro.com</a>
-                                    to obtain your withdrawal verification code.
+                                    Ensure to input accurate information as submitting of wrong information may lead to loss of assets
                                 </p>
-                                <button @click="showCodeInfo = !showCodeInfo" class="mt-3 flex items-center text-xs sm:text-sm font-medium text-amber-300 hover:text-amber-200 transition-colors">
-                                    <span x-text="showCodeInfo ? 'Hide security details' : 'Learn about withdrawal security'"></span>
-                                    <i x-bind:data-lucide="showCodeInfo ? 'chevron-up' : 'chevron-down'" class="ml-1 w-3 h-3 sm:w-4 sm:h-4"></i>
-                                </button>
-                                <div x-show="showCodeInfo" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" class="mt-3 p-3 sm:p-4 bg-amber-500/10 rounded-lg text-xs sm:text-sm text-amber-200" style="display: none;">
-                                    <p class="font-medium mb-2">Why withdrawal codes are required:</p>
-                                    <ul class="space-y-1 text-xs">
-                                        <li>• Enhanced security to protect your account from unauthorized access</li>
-                                        <li>• Verification that all withdrawal requests are legitimate and authorized</li>
-                                        <li>• Additional layer of protection against fraudulent transactions</li>
-                                        <li>• Compliance with financial security regulations and best practices</li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,23 +98,60 @@ if(isset($_POST['withdraw'])){
                     <!-- Enhanced Withdrawal Code Form -->
                     <div class="bg-gray-800/50 rounded-xl p-4 sm:p-6 backdrop-blur-sm">
                         <form action="" method="post" class="space-y-4 sm:space-y-6">
-                            <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                            <div>
-                                <label for="withdrawal_code" class="block text-sm font-semibold text-gray-200 mb-3">
-                                    Enter Withdrawal Verification Code
+                            <div>
+                                <label for="amount" class="block text-sm font-semibold text-gray-200 mb-3">
+                                    Amount
+                                </label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <i data-lucide="shield-check" class="h-4 w-4 sm:h-5 sm:w-5 text-gray-400"></i>
+                                    </div>
+                                    <input type="number"
+                                           name="amount"
+                                           id="amount"
+                                           required
+                                           placeholder="Enter your Amount here"
+                                           class="pl-10 sm:pl-12 block w-full rounded-xl border-gray-600/50 bg-gray-800/50 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-white text-sm sm:text-base py-3 sm:py-4 transition-all duration-200 backdrop-blur-sm"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <label for="amount" class="block text-sm font-semibold text-gray-200 mb-3">
+                                    Payment Method
+                                </label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                        <i data-lucide="shield-check" class="h-4 w-4 sm:h-5 sm:w-5 text-gray-400"></i>
+                                    </div>
+                                    <select name="payment_method" required
+                                class="block w-full px-3 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+                                       rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                                            
+                                                            <option value="BNB">BNB</option>
+                                                           
+                                                            <option value="USDT">USDT</option>
+                                                            
+                                                            <option value="Ethereum">Ethereum</option>
+                                                            <option value="Bitcoin">Bitcoin</option>
+                                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="address" class="block text-sm font-semibold text-gray-200 mb-3">
+                                    Wallet Address
                                 </label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                         <i data-lucide="shield-check" class="h-4 w-4 sm:h-5 sm:w-5 text-gray-400"></i>
                                     </div>
                                     <input type="text"
-                                           name="withdrawal_code"
-                                           id="withdrawal_code"
+                                           name="address"
+                                           id="address"
                                            required
-                                           placeholder="Enter your verification code here"
+                                           placeholder="Enter Wallet Address"
                                            class="pl-10 sm:pl-12 block w-full rounded-xl border-gray-600/50 bg-gray-800/50 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-white text-sm sm:text-base py-3 sm:py-4 transition-all duration-200 backdrop-blur-sm"
                                     />
                                 </div>
-                                <p class="mt-2 text-xs text-gray-400">This code was provided by our customer support team</p>
                             </div>
 
                             <button type="submit" name="withdraw" class="w-full inline-flex justify-center items-center gap-2 py-3 sm:py-4 px-4 sm:px-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] text-sm sm:text-base">
