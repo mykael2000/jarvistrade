@@ -22,15 +22,16 @@ if (isset($_POST['submit'])) {
         $newpend = $userSu['pending_withdrawal'] - $usereu['amount'];
         $newearn = $userSu['total_earnings'] + $usereu['amount'];
         $newbal = $userSu['total_balance'] + $usereu['amount'];
-        $sqlcoin = "UPDATE clients set total_balance ='$newbal', pending_withdrawal = '$newpend', total_earnings = '$newearn' WHERE id='$userid'";
+        $sqlcoin = "UPDATE users set total_balance ='$newbal', pending_withdrawal = '$newpend', total_earnings = '$newearn' WHERE id='$userid'";
         $querycoin = mysqli_query($conn, $sqlcoin);
 
     }
     if ($status == "completed") {
+        $newbal = $userSu['total_balance'] - $usereu['amount'];
         $newtw = $userSu['total_withdrawals'] + $usereu['amount'];
         $newpend = $userSu['pending_withdrawal'] - $usereu['amount'];
 
-        $sqlcoin = "UPDATE clients set pending_withdrawal = '$newpend', total_withdrawals = '$newtw' WHERE id='$userid'";
+        $sqlcoin = "UPDATE users set total_balance = '$newbal', pending_withdrawal = '$newpend', total_withdrawals = '$newtw' WHERE id='$userid'";
         $querycoin = mysqli_query($conn, $sqlcoin);
     }
 

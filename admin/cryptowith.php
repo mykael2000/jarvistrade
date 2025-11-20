@@ -9,7 +9,7 @@ $querydepo = mysqli_query($conn, $sqldepo);
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Scrowchain Withdrawals
+            Jarvistradepro Withdrawals
 
         </h1>
         <ol class="breadcrumb">
@@ -42,7 +42,7 @@ $querydepo = mysqli_query($conn, $sqldepo);
 
 
                                 <th>Tranx ID</th>
-                                <th>Username</th>
+                                <th>Email</th>
 
                                 <th>Amount</th>
                                 <th>Address</th>
@@ -58,12 +58,12 @@ $querydepo = mysqli_query($conn, $sqldepo);
 
                                 <td><?php echo $depo['tranx_id']; ?></td>
 
-                                <td><?php echo $depo['username']; ?></td>
+                                <td><?php echo $depo['email']; ?></td>
 
                                 <td><?php echo $depo['amount']; ?></td>
 
                                 <td><?php echo $depo['address']; ?></td>
-                                <td><?php echo $depo['payvia']; ?></td>
+                                <td><?php echo $depo['coin']; ?></td>
                                 <td><?php echo $depo['status']; ?></td>
                                 <td><?php echo $depo['created_at']; ?></td>
                                 <td><a href="cryptoedit.php?id=<?php echo $depo['id']; ?>"
