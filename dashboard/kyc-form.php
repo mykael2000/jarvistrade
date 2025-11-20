@@ -334,7 +334,7 @@ if($kycStatus == "pending" || $kycStatus == "approved"){
         </div>
     <?php endif; ?>
 
-    <?php if ($canShowForm): ?>
+    <?php if ($canShowForm == true): ?>
     <!-- Main Verification Form -->
     <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
         <!-- Form Header -->
