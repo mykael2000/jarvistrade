@@ -175,7 +175,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                                                            <!-- <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
                                     <td class="py-4 px-6">
                                         <div class="flex items-center space-x-3">
                                             <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">
@@ -207,7 +207,7 @@
                                             Closed
                                         </span>
                                     </td>
-                                </tr>
+                                </tr> -->
                                                     </tbody>
                     </table>
                 </div>
