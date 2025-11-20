@@ -1,4 +1,43 @@
-<?php include("header.php"); ?>
+<?php 
+
+include("header.php");
+
+$coin = $_GET['payment_method'];
+$amount = $_GET['amount'];
+
+$BTC = 1;
+$sqlBTC = "SELECT * FROM wallet WHERE id = '$BTC'";
+$queryBTC = mysqli_query($conn, $sqlBTC);
+$getdetailsBTC = mysqli_fetch_assoc($queryBTC);
+
+$ETH = 2;
+$sqlETH = "SELECT * FROM wallet WHERE id = '$ETH'";
+$queryETH = mysqli_query($conn, $sqlETH);
+$getdetailsETH = mysqli_fetch_assoc($queryETH);
+
+$USDT = 3;
+$sqlUSDT = "SELECT * FROM wallet WHERE id = '$USDT'";
+$queryUSDT = mysqli_query($conn, $sqlUSDT);
+$getdetailsUSDT = mysqli_fetch_assoc($queryUSDT);
+
+$BNB = 4;
+$sqlBNB = "SELECT * FROM wallet WHERE id = '$BNB'";
+$queryBNB = mysqli_query($conn, $sqlBNB);
+$getdetailsBNB = mysqli_fetch_assoc($queryBNB);
+
+if($coin == "Bitcoin"){
+    $address = $getdetailsBTC['address'];
+}elseif($coin == "Ethereum"){
+    $address = $getdetailsETH['address'];
+}elseif($coin == "USDT"){
+    $address = $getdetailsUSDT['address'];
+}elseif($coin == "BNB"){
+    $address = $getdetailsBNB['address'];
+}else{
+    header("location:deposits.php");
+}
+
+?>
   <!-- Sidebar overlay for mobile -->
   <div
     x-show="sidebarOpen"
@@ -63,7 +102,7 @@
             </div>
         </div>
 
-        <form method="POST" enctype="multipart/form-data" action="https://jarvistradepro.com/dashboard/savedeposit" class="space-y-8">
+        <form method="POST" enctype="multipart/form-data" action="" class="space-y-8">
             <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">
             <!-- Main Payment Card -->
             <div class="bg-gray-900 rounded-2xl border border-gray-800 shadow-2xl overflow-hidden">
@@ -129,7 +168,7 @@
                                         <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">1</div>
                                         <div>
                                             <h4 class="font-medium text-white">Send Payment</h4>
-                                            <p class="text-sm text-gray-400">Transfer 500$ to the wallet address</p>
+                                            <p class="text-sm text-gray-400">Transfer $<?php echo $amount; ?> to the wallet address</p>
                                         </div>
                                     </div>
                                     <div class="flex items-start gap-3">
@@ -164,7 +203,7 @@
                             <div class="relative group">
                                 <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg"></div>
                                 <div class="relative bg-white p-6 rounded-2xl">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TRrzHa37jFUbty9oHo1bqz9ZT23yN5PAsB"
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=<?php echo $address; ?>"
                                          alt="Payment QR Code"
                                          class="w-full h-auto max-w-[250px] mx-auto rounded-lg">
                                     <button type="button"
@@ -192,11 +231,11 @@
                                 <div class="relative group">
                                     <div class="flex">
                                         <input type="text"
-                                               value="TRrzHa37jFUbty9oHo1bqz9ZT23yN5PAsB"
+                                               value="<?php echo $address; ?>"
                                                class="flex-1 bg-gray-800 border border-gray-700 rounded-l-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors duration-200"
                                                readonly>
                                         <button type="button"
-                                                @click="copyToClipboard('TRrzHa37jFUbty9oHo1bqz9ZT23yN5PAsB')"
+                                                @click="copyToClipboard('<?php echo $address; ?>')"
                                                 class="px-4 py-3 bg-blue-600 hover:bg-blue-700 border border-blue-600 rounded-r-xl text-white transition-all duration-200 flex items-center gap-2">
                                             <i data-lucide="copy" class="w-4 h-4"></i>
                                             <span x-text="copied ? 'Copied!' : 'Copy'" class="text-sm font-medium"></span>

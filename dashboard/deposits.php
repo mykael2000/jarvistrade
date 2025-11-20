@@ -101,9 +101,9 @@ if(isset($_POST['proceed'])){
                                 class="block w-full px-3 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
                                        rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                                                             <!-- <option value="USDT TRC-20">USDT TRC-20</option>
-                                                            <option value="TON">TON</option>
+                                                            <option value="TON">TON</option>-->
                                                             <option value="BNB">BNB</option>
-                                                            <option value="Doge">Doge</option>
+                                                            <!--<option value="Doge">Doge</option>
                                                             <option value="Trump">Trump</option>
                                                             <option value="XRP">XRP</option>
                                                             <option value="Solana">Solana</option> -->
@@ -165,12 +165,12 @@ if(isset($_POST['proceed'])){
                                         <!-- <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">TON</span>
-                    </div>
-                                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    </div>-->
+                    <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">BNB</span>
                     </div>
-                                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                              <!--          <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">Doge</span>
                     </div>
