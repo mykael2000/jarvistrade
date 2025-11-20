@@ -172,6 +172,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $kycStatus = $user['kyc_status'];      // default: no submission yet
 $canShowForm = true;      // default: allow form
 
+if($kycStatus == "pending" || $kycStatus == "approved"){
+    $canShowForm = false;
+}
 
 ?>
   <!-- Sidebar overlay for mobile -->
