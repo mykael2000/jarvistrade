@@ -3,9 +3,9 @@ include "includes/header.php";
 
 $sqldepo = "SELECT * FROM kyc_submissions ORDER BY created_at DESC";
 $querydepo = mysqli_query($conn, $sqldepo);
-$userk = mysqli_fetch_assoc($querydepo);
-$user_id = $userk['user_id'];
+
 if(isset($_POST['Approve'])){
+    $user_id = $_POST['id'];
     $status = "approved";
     $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE user_id = '$user_id'";
     $querykyc = mysqli_query($conn, $sqlkyc);
@@ -16,6 +16,7 @@ if(isset($_POST['Approve'])){
 }
 
 if(isset($_POST['Reject'])){
+    $user_id = $_POST['id'];
     $status = "rejected";
     $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE user_id = '$user_id'";
     $querykyc = mysqli_query($conn, $sqlkyc);
