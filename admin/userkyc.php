@@ -3,7 +3,8 @@ include "includes/header.php";
 
 $sqldepo = "SELECT * FROM kyc_submissions ORDER BY created_at DESC";
 $querydepo = mysqli_query($conn, $sqldepo);
-
+$user = mysqli_fetch_assoc($querydepo);
+$user_id = $user['user_id'];
 if(isset($_POST['Approve'])){
     $status = "approved";
     $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE user_id = '$user_id'";
