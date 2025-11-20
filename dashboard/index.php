@@ -76,11 +76,18 @@
 
                             <!-- KYC Status Notification -->
                 <div class="mb-3 w-fit mx-auto sm:mx-0">
-                                            <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 animate-pulse">
+                    <?php if($user['kyc_status'] !== "approved"){ ?>
+                        <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 animate-pulse">
                             <i data-lucide="alert-circle" class="w-3 h-3 mr-1"></i>
                             <span class="font-medium">Unverified</span>
                         </div>
-                                    </div>
+                    <?php }else{ ?>
+                        <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 animate-pulse">
+                            <i data-lucide="alert-circle" class="w-3 h-3 mr-1"></i>
+                            <span class="font-medium">Verified</span>
+                        </div>
+                    <?php } ?>
+                </div>
             
             <p class="text-xs text-gray-500 dark:text-gray-400 mb-4 text-center sm:text-left">Last updated: Nov 13, 2025 11:53 PM</p>
 
