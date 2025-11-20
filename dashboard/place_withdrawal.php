@@ -1,6 +1,6 @@
 <?php include("header.php"); 
 
-if($_GET['code'] !== "authenticated"){
+if($_GET['code'] !== "approved"){
     header("location: withdrawals.php");
 }
 $message = "";
