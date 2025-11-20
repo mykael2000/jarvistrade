@@ -173,6 +173,7 @@
 
 
             <!-- KYC Verification Component -->
+             <?php if($user['kyc_status'] !== "approved"){ ?>
         <div class="mb-6 sm:mb-8" x-data="{ kycDropdownOpen: false }" x-cloak>
                             <!-- KYC Verification Needed -->
                 <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-100 dark:border-gray-800 shadow-sm">
@@ -250,10 +251,10 @@
                                     <span>Start Verification</span>
                                 </a>
                             </div>
-                                            </div>
+                        </div>
                 </div>
-                    </div>
-    
+        </div>
+                <?php } ?>
          <!-- Wallet Connection Prompt -->
         <div class="mb-6 sm:mb-8">
             <div class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 rounded-2xl p-4 sm:p-6 border border-indigo-200 dark:border-indigo-700">
