@@ -97,6 +97,7 @@ $message = "<span class='bg-green-100 border border-green-400 text-green-700 px-
 
                     <!-- Enhanced Withdrawal Code Form -->
                     <div class="bg-gray-800/50 rounded-xl p-4 sm:p-6 backdrop-blur-sm">
+                        <?php echo $message; ?>
                         <form action="" method="post" class="space-y-4 sm:space-y-6">
                             <div>
                                 <label for="amount" class="block text-sm font-semibold text-gray-200 mb-3">
@@ -120,9 +121,7 @@ $message = "<span class='bg-green-100 border border-green-400 text-green-700 px-
                                     Payment Method
                                 </label>
                                 <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <i data-lucide="shield-check" class="h-4 w-4 sm:h-5 sm:w-5 text-gray-400"></i>
-                                    </div>
+                                    
                                     <select name="payment_method" required
                                 class="block w-full px-3 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
                                        rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
