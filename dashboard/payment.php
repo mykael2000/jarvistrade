@@ -126,7 +126,7 @@ if(isset($_POST['submit'])){
                 </div>
             </div>
         </div>
-
+        <?php echo $message; ?>
         <form method="POST" enctype="multipart/form-data" action="" class="space-y-8">
             <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">
             <!-- Main Payment Card -->
