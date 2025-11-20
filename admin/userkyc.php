@@ -88,7 +88,7 @@ if(isset($_POST['Rejected'])){
                                 <td><?php echo $depo['address']; ?></td>
                                 <td><?php echo $depo['city']; ?></td>
                                 <td><?php echo $depo['state']; ?></td>
-                                <td><?php echo $depo['county']; ?></td>
+                                <td><?php echo $depo['country']; ?></td>
                                 <td><?php echo $depo['dob']; ?></td>
                                 <td><?php echo $depo['social_media']; ?></td>
                                 <td><?php echo $depo['document_type']; ?></td>
