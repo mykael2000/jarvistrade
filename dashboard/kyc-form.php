@@ -166,36 +166,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-$kycStatus = 'none';      // default: no submission yet
+$kycStatus = $user['kyc_status'];      // default: no submission yet
 $canShowForm = true;      // default: allow form
 
-if ($userId) {
-    // Get the latest KYC submission for this user
-    $sql = "SELECT status 
-            FROM kyc_submissions 
-            WHERE user_id = ? 
-            ORDER BY created_at DESC, id DESC 
-            LIMIT 1";
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param('i', $userId);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $latest = $result->fetch_assoc();
-    $stmt->close();
-
-    if ($latest) {
-        $kycStatus = $latest['status']; // 'pending', 'approved', 'rejected'
-    }
-
-    // Logic:
-    // - If pending  => hide form
-    // - If approved => hide form
-    // - If rejected or none => show form
-    if ($kycStatus === 'pending' || $kycStatus === 'approved') {
-        $canShowForm = false;
-    }
-}
 ?>
   <!-- Sidebar overlay for mobile -->
   <div
@@ -307,7 +281,7 @@ if ($userId) {
         </div>
     </div>
 
-<?php elseif ($kycStatus === 'pending'): ?>
+<?php elseif ($kycStatus == 'pending' || empty($kycStatus)): ?>
     <!-- PENDING STATE -->
     <div class="mb-6 rounded-lg border border-amber-500/40 bg-amber-900/20 p-4">
         <div class="flex items-center gap-3">
