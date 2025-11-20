@@ -602,13 +602,13 @@ include("function.php");
                         My Portfolio
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="tradinghistory.php"
                        class="flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 ">
                         <i data-lucide="activity" class="w-5 h-5 mr-3"></i>
                         Performance History
                     </a>
-                </li>
+                </li> -->
             </ul>
         </div>
 
