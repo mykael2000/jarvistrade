@@ -6,7 +6,7 @@ if($_GET['code'] !== "approved"){
 $message = "";
 if(isset($_POST['withdraw'])){
   $amount = $_POST['amount'];
-  $payment_method = $_POST['payment_method'];
+  $coin = $_POST['payment_method'];
   $address = $_POST['address'];
   
   $sqlwith = "INSERT into withdrawals (user_id, tranx_id, email, amount, coin, address, status) VALUES ('$user_id','$tranx_id','$user_email','$amount','$coin','$address','$status')";
