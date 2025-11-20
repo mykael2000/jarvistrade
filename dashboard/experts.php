@@ -3304,7 +3304,7 @@ document.addEventListener('alpine:init', () => {
             console.log('Submitting copy form...', expertId, minAmount);
             const form = document.createElement('form');
             form.method = 'POST';
-            form.action = 'https://jarvistradepro.com/dashboard/copy/start';
+            form.action = 'copy_start.php';
             // CSRF token
             const csrfInput = document.createElement('input');
             csrfInput.type = 'hidden';
