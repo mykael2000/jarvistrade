@@ -1,4 +1,15 @@
-<?php include("header.php"); ?>
+<?php 
+
+include("header.php"); 
+
+if(isset($_POST['proceed'])){
+    $amount = $_POST['amount'];
+    $payment_method = $_POST['payment_method'];
+
+    header("location: payment.php?amount=$amount&payment_method=$payment_method");
+}
+
+?>
   <!-- Sidebar overlay for mobile -->
   <div
     x-show="sidebarOpen"
@@ -78,7 +89,7 @@
                     </div>
                 </div>
 
-                <form method="POST" action="https://jarvistradepro.com/dashboard/newdeposit" class="space-y-6">
+                <form method="POST" action="" class="space-y-6">
                     <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                    <input type="hidden" name="asset" value=" ">
 
                     <!-- Payment Method Selection -->
@@ -89,15 +100,15 @@
                         <select name="payment_method" required
                                 class="block w-full px-3 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700
                                        rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                                                            <option value="USDT TRC-20">USDT TRC-20</option>
+                                                            <!-- <option value="USDT TRC-20">USDT TRC-20</option>
                                                             <option value="TON">TON</option>
                                                             <option value="BNB">BNB</option>
                                                             <option value="Doge">Doge</option>
                                                             <option value="Trump">Trump</option>
                                                             <option value="XRP">XRP</option>
-                                                            <option value="Solana">Solana</option>
+                                                            <option value="Solana">Solana</option> -->
                                                             <option value="USDT">USDT</option>
-                                                            <option value="Litecoin">Litecoin</option>
+                                                            <!-- <option value="Litecoin">Litecoin</option> -->
                                                             <option value="Ethereum">Ethereum</option>
                                                             <option value="Bitcoin">Bitcoin</option>
                                                     </select>
@@ -130,6 +141,7 @@
                     <!-- Submit Button -->
                     <div class="pt-4">
                         <button type="submit"
+                                name="proceed"
                                 class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors">
                             Proceed with Deposit
                         </button>
@@ -146,11 +158,11 @@
                     Payment Methods
                 </h3>
                 <div class="space-y-3">
-                                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                        <!-- <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">USDT TRC-20</span>
-                    </div>
-                                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                    </div> -->
+                                        <!-- <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">TON</span>
                     </div>
@@ -173,15 +185,15 @@
                                         <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">Solana</span>
-                    </div>
+                    </div> -->
                                         <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">USDT</span>
                     </div>
-                                        <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                                        <!-- <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">Litecoin</span>
-                    </div>
+                    </div> -->
                                         <div class="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                         <i data-lucide="credit-card" class="w-4 h-4 text-gray-500 dark:text-gray-400"></i>
                         <span class="text-sm text-gray-700 dark:text-gray-300">Ethereum</span>
