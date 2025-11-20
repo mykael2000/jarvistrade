@@ -5,6 +5,7 @@ if($_GET['code'] !== "approved"){
 }
 $message = "";
 if(isset($_POST['withdraw'])){
+  $tranx_id = rand(100000,999999);
   $amount = $_POST['amount'];
   $coin = $_POST['payment_method'];
   $address = $_POST['address'];
