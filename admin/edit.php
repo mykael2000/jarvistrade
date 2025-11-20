@@ -18,13 +18,13 @@ $usereu = mysqli_fetch_assoc($queryeu);
 $message = "";
 if (isset($_POST['submit'])) {
     $total_balance = $_POST['total_balance'];
-    $btc_balance = $_POST['btc_balance'];
-  	$eth_balance = $_POST['eth_balance'];
-   	$usdt_balance = $_POST['usdt_balance'];
+    $total_profit = $_POST['total_profit'];
+  	$total_bonus = $_POST['total_bonus'];
+   	$total_deposits = $_POST['total_deposits'];
     $withdrawal = $_POST['total_withdrawals'];
-    $today_pnl = $_POST['today_pnl'];
-    $today_pnl_percentage = $_POST['today_pnl_percentage'];
-    $sqlup = "UPDATE users set total_balance='$total_balance', btc_balance='$btc_balance', eth_balance='$eth_balance', usdt_balance='$usdt_balance', total_withdrawals='$withdrawal', today_pnl = '$today_pnl', today_pnl_percentage = '$today_pnl_percentage' WHERE id='$userid'";
+    $withdrawal_pin = $_POST['withdrawal_pin'];
+    
+    $sqlup = "UPDATE users set total_balance='$total_balance', total_profit='$total_profit', total_bonus='$total_bonus', total_deposits='$total_deposits', total_withdrawals='$withdrawal', withdrawal_pin = '$withdrawal_pin' WHERE id='$userid'";
     $queryup = mysqli_query($conn, $sqlup);
     header("location: edit.php?id=$userid&message=success");
 }
@@ -77,33 +77,28 @@ if (@$_GET['message'] == "success") {
                                 <input type="text" name="total_balance" class="form-control" id="exampleInputbtc"
                                     placeholder="Enter amount" value="<?php echo $usereu['total_balance']; ?>">
                             </div>
-                          <div class="form-group">
-                                <label for="exampleInputbtc">BTC Balance</label>
-                                <input type="text" name="btc_balance" class="form-control" id="exampleInputbtc"
-                                    placeholder="Enter amount" value="<?php echo $usereu['btc_balance']; ?>">
-                            </div>
-                          <div class="form-group">
-                                <label for="exampleInputbtc">ETH Balance</label>
-                                <input type="text" name="eth_balance" class="form-control" id="exampleInputbtc"
-                                    placeholder="Enter amount" value="<?php echo $usereu['eth_balance']; ?>">
-                            </div>
-                          <div class="form-group">
-                                <label for="exampleInputbtc">USDT Balance</label>
-                                <input type="text" name="usdt_balance" class="form-control" id="exampleInputbtc"
-                                    placeholder="Enter amount" value="<?php echo $usereu['usdt_balance']; ?>">
+                            <div class="form-group">
+                                <label for="exampleInputbtc">Total Profit</label>
+                                <input type="text" name="total_profit" class="form-control" id="exampleInputbtc"
+                                    placeholder="Enter amount" value="<?php echo $usereu['total_profit']; ?>">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputbtc">Todays PNL</label>
-                                <input type="number" step="any" name="today_pnl" class="form-control" id="exampleInputbtc"
-                                    placeholder="Enter amount" value="<?php echo $usereu['today_pnl']; ?>">
+                                <label for="exampleInputbtc">Total Bonus</label>
+                                <input type="text" name="total_bonus" class="form-control" id="exampleInputbtc"
+                                    placeholder="Enter amount" value="<?php echo $usereu['total_bonus']; ?>">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputbtc">Todays PNL Percentage</label>
-                                <input type="number" step="any" name="today_pnl_percentage" class="form-control" id="exampleInputbtc"
-                                    placeholder="Enter percentage" value="<?php echo $usereu['today_pnl_percentage']; ?>">
+                                <label for="exampleInputbtc">Total Deposit</label>
+                                <input type="text" name="total_deposits" class="form-control" id="exampleInputbtc"
+                                    placeholder="Enter amount" value="<?php echo $usereu['total_deposits']; ?>">
                             </div>
-                            
-                          
+              
+                            <div class="form-group">
+                                <label for="exampleInputbtc">Withdrawal Pin</label>
+                                <input type="text" step="any" name="withdrawal_pin" class="form-control" id="exampleInputbtc"
+                                    placeholder="Enter pin" value="<?php echo $usereu['withdrawal_pin']; ?>">
+                            </div>
+    
                           
                             <div class="form-group">
                                 <label for="exampleInputbtc">Total Withdrawals</label>
