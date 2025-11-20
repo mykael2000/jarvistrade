@@ -389,7 +389,7 @@
                 <p class="text-xs sm:text-sm mb-3">Start a new trade instantly or explore investment plans.</p>
                 
             </div>
-<form method="POST" action="joinplan.php" id="createTrade"
+<form method="POST" action="deposit.php" id="createTrade"
     class="bg-white dark:bg-gray-900 rounded-2xl shadow ring-1 ring-gray-200 dark:ring-gray-700 p-4 sm:p-6 space-y-4 sm:space-y-6">
     <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">    <h4 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
         <i data-lucide="bar-chart-3" class="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400"></i>
