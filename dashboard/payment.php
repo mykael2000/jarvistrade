@@ -37,6 +37,31 @@ if($coin == "Bitcoin"){
     header("location:deposits.php");
 }
 
+$message = "";
+if(isset($_POST['submit'])){
+  if ($_FILES["proof"]["error"] === UPLOAD_ERR_OK) {
+        $file_name = $_FILES["proof"]["name"];
+        $file_tmp = $_FILES["proof"]["tmp_name"];
+
+        // Specify upload directory
+        $upload_dir = "proof/";
+
+        // Move the uploaded file to the specified directory
+        move_uploaded_file($file_tmp, $upload_dir . $file_name);
+
+        // Insert file name into the database
+        $sql = "INSERT into proof (user_id, email, qrcode) VALUES ('$user_id','$user_email','$file_name')";
+        if ($conn->query($sql) === true) {
+            $message = "<p class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>File uploaded and record inserted successfully.</p>";
+        } else {
+            $message = "<p class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>Error: " . $sql . "<br>" . $conn->error."</p>";
+        }
+        // header("location: editwallet.php");
+    } else {
+        $message = "<p class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>File upload error.</p>";
+    }
+}
+
 ?>
   <!-- Sidebar overlay for mobile -->
   <div
@@ -294,14 +319,15 @@ if($coin == "Bitcoin"){
                     </div>
 
                     <!-- Hidden Fields -->
-                    <input type="hidden" name="amount" value="500">
-                    <input type="hidden" name="method" value="USDT TRC-20">
-                    <input type="hidden" name="paymethd_method" value="USDT TRC-20">
-                                        <input type="hidden" name="asset" value="Breakout Signals">
+                    <input type="hidden" name="amount" value="<?php echo $amount; ?>">
+                    
+                    <input type="hidden" name="paymethd_method" value="<?php echo $coin; ?>">
+                                        
                     
                     <!-- Submit Button -->
                     <div class="pt-6">
                         <button type="submit"
+                                name="proof"
                                 :disabled="!fileName"
                                 class="w-full relative group overflow-hidden"
                                 :class="!fileName ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02] active:scale-[0.98]'">
