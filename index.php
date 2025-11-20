@@ -1485,22 +1485,30 @@ include("header.php");
 <section class="py-16 bg-dark-400">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <!-- Chart Widget -->
-           <div class="bg-dark-300 rounded-xl overflow-hidden border border-gray-800 shadow-lg">
-    <div class="w-full h-[400px]">
-        <iframe
-            src="https://widget.coinlib.io/widget?type=chart&amp;theme=dark&amp;coin_id=859&amp;pref_coin_id=1505"
-            scrolling="auto"
-            marginwidth="0"
-            marginheight="0"
-            frameborder="0"
-            class="w-full h-full border-0">
-        </iframe>
-    </div>
-    <div class="p-2 text-right text-xs text-green-500">
-        <a href="https://coinlib.io/" target="_blank" class="hover:underline">Cryptocurrency Prices by Coinlib</a>
-    </div>
-</div>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/heatmap/crypto/" rel="noopener nofollow" target="_blank"><span class="blue-text">Crypto Heatmap</span></a><span class="trademark"> by TradingView</span></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-crypto-coins-heatmap.js" async>
+            {
+            "dataSource": "Crypto",
+            "blockSize": "market_cap_calc",
+            "blockColor": "24h_close_change|5",
+            "locale": "en",
+            "symbolUrl": "",
+            "colorTheme": "dark",
+            "hasTopBar": false,
+            "isDataSetEnabled": false,
+            "isZoomEnabled": true,
+            "hasSymbolTooltip": true,
+            "isMonoSize": false,
+            "width": "100%",
+            "height": "100%"
+            }
+            </script>
+            </div>
+            <!-- TradingView Widget END -->
+        </div>
 
             <!-- Expert Support Content -->
             <div class="space-y-8">
