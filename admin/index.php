@@ -51,25 +51,6 @@ if ($result) {
     echo "Error: " . mysqli_error($conn);
 }
 
-// SQL query to get the total amount where status is "completed"
-$sqltaL = "SELECT SUM(active_deposits) AS total_amountL FROM users";
-
-// Execute the query
-$resultL = mysqli_query($conn, $sqltaL);
-
-if ($resultL) {
-    // Fetch the result as an associative array
-    $rowL = mysqli_fetch_assoc($resultL);
-
-    // Get the total amount
-    $totalLTCAmount = $rowL['total_amountL'];
-
-    // Output the total amount
-
-} else {
-    // Handle the query error
-    echo "Error: " . mysqli_error($conn);
-}
 
 // Close the database connection
 mysqli_close($conn);
@@ -106,19 +87,7 @@ mysqli_close($conn);
                 </div>
             </div><!-- ./col -->
 
-            <div class="col-lg-3 col-xs-6">
-                <!-- small box -->
-                <div class="small-box bg-green">
-                    <div class="inner">
-                        <h3>$<?php if (empty($totalLTCAmount)) {echo 0;} else {echo $totalLTCAmount;}?></h3>
-                        <p>Total Active Deposits</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div><!-- ./col -->
+          
         </div><!-- /.row -->
         <!-- Main row -->
         <div class="row">
