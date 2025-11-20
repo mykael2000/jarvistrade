@@ -11,7 +11,7 @@ if(isset($_POST['withdraw'])){
   
   $sqlwith = "INSERT into withdrawals (user_id, tranx_id, email, amount, coin, address, status) VALUES ('$user_id','$tranx_id','$user_email','$amount','$coin','$address','$status')";
   $querywith = mysqli_query($conn, $sqlwith);
-
+$message = "<span class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>Withdrawal Request Submitted Successfully!</span>";
 }
 ?>
   <!-- Sidebar overlay for mobile -->

@@ -107,6 +107,7 @@ if(isset($_POST['withdraw'])){
 
                     <!-- Enhanced Withdrawal Code Form -->
                     <div class="bg-gray-800/50 rounded-xl p-4 sm:p-6 backdrop-blur-sm">
+                      <?php echo $message; ?>
                         <form action="" method="post" class="space-y-4 sm:space-y-6">
                             <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                            <div>
                                 <label for="withdrawal_code" class="block text-sm font-semibold text-gray-200 mb-3">
