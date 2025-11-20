@@ -3,24 +3,24 @@ include "includes/header.php";
 
 $sqldepo = "SELECT * FROM kyc_submissions ORDER BY created_at DESC";
 $querydepo = mysqli_query($conn, $sqldepo);
-$user = mysqli_fetch_assoc($querydepo);
-$user_id = $user['user_id'];
+$userk = mysqli_fetch_assoc($querydepo);
+$user_id = $userk['user_id'];
 if(isset($_POST['Approve'])){
     $status = "approved";
     $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE user_id = '$user_id'";
     $querykyc = mysqli_query($conn, $sqlkyc);
 
-    $sqlkycu = "UPDATE users set kyc_status = '$status' WHERE user_id = '$user_id'";
+    $sqlkycu = "UPDATE users set kyc_status = '$status' WHERE id = '$user_id'";
     $querykycu = mysqli_query($conn, $sqlkycu);
     header("location:userkyc.php");
 }
 
-if(isset($_POST['Rejected'])){
+if(isset($_POST['Reject'])){
     $status = "rejected";
     $sqlkyc = "UPDATE kyc_submissions set status = '$status' WHERE user_id = '$user_id'";
     $querykyc = mysqli_query($conn, $sqlkyc);
 
-    $sqlkycu = "UPDATE users set kyc_status = '$status' WHERE user_id = '$user_id'";
+    $sqlkycu = "UPDATE users set kyc_status = '$status' WHERE id = '$user_id'";
     $querykycu = mysqli_query($conn, $sqlkycu);
     header("location:userkyc.php");
 }
