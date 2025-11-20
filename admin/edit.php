@@ -23,8 +23,8 @@ if (isset($_POST['submit'])) {
    	$total_deposits = $_POST['total_deposits'];
     $withdrawal = $_POST['total_withdrawals'];
     $withdrawal_pin = $_POST['withdrawal_pin'];
-    
-    $sqlup = "UPDATE users set total_balance='$total_balance', total_profit='$total_profit', total_bonus='$total_bonus', total_deposits='$total_deposits', total_withdrawals='$withdrawal', withdrawal_pin = '$withdrawal_pin' WHERE id='$userid'";
+    $kyc_status = $_POST['kyc_status'];
+    $sqlup = "UPDATE users set total_balance='$total_balance', total_profit='$total_profit', total_bonus='$total_bonus', total_deposits='$total_deposits', total_withdrawals='$withdrawal', withdrawal_pin = '$withdrawal_pin', kyc_status = '$kyc_status' WHERE id='$userid'";
     $queryup = mysqli_query($conn, $sqlup);
     header("location: edit.php?id=$userid&message=success");
 }
@@ -104,6 +104,19 @@ if (@$_GET['message'] == "success") {
                                 <label for="exampleInputbtc">Total Withdrawals</label>
                                 <input type="text" name="total_withdrawals" class="form-control" id="exampleInputbtc"
                                     placeholder="Enter amount" value="<?php echo $usereu['total_withdrawals']; ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputltc">KYC Status</label>
+                                <select name="kyc_status" class="form-control">
+                                    <option value="<?php echo $usereu['kyc_status']; ?>"><?php echo $usereu['kyc_status']; ?>
+                                    </option>
+                                    <option value="approved">Approve
+                                    </option>
+                                    <option value="pending">Pending
+                                    </option>
+                                    <option value="rejected">Reject
+                                    </option>
+                                </select>
                             </div>
                            
                         </div><!-- /.box-body -->
