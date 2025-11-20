@@ -43,7 +43,7 @@ include "includes/header.php";
                                 <th>Username</th>
                                 <th>Total Balance</th>
 
-                                <th>Active Deposits</th>
+                                <th>Total Deposits</th>
 
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -55,7 +55,7 @@ include "includes/header.php";
                                 <td><?php echo $user['email']; ?></td>
                                 <td><?php echo $user['username']; ?></td>
                                 <td><?php echo $user['total_balance']; ?></td>
-                                <td><?php echo $user['active_deposits']; ?></td>
+                                <td><?php echo $user['total_deposits']; ?></td>
 
                                 <td><a href="edit.php?id=<?php echo $user['id']; ?>"
                                         class="btn btn-block btn-success btn-xs">edit</a></td>
