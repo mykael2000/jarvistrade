@@ -105,7 +105,7 @@ if(isset($_POST['Rejected'])){
                                 </form></td>
                                 <td><form action="" method="POST">
                                     <input type="hidden" name="id" value="<?php echo $depo['id']; ?>">
-                                    <button class="btn btn-success" type="submit" name="Reject">Reject</button>
+                                    <button class="btn btn-danger" type="submit" name="Reject">Reject</button>
                                 </form></td>
                                 <?php }else{ ?>
                                     <td><span><?php echo $depo['status']; ?></span></td>
