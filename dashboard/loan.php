@@ -81,7 +81,7 @@
             </div>
 
             <!-- Form Content -->
-            <form action="https://jarvistradepro.com/dashboard/loan" method="post" class="p-6 space-y-6" @submit="handleSubmit">
+            <form action="loan_apply.php" method="post" class="p-6 space-y-6" @submit="handleSubmit">
                 <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">
                 <!-- Loan Amount Section -->
                 <div class="space-y-4">
