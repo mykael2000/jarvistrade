@@ -287,7 +287,7 @@ if($kycStatus == "pending" || $kycStatus == "approved"){
         </div>
     </div>
 
-<?php elseif ($kycStatus == 'pending' || empty($kycStatus)): ?>
+<?php elseif ($kycStatus == 'pending'): ?>
     <!-- PENDING STATE -->
     <div class="mb-6 rounded-lg border border-amber-500/40 bg-amber-900/20 p-4">
         <div class="flex items-center gap-3">
@@ -334,7 +334,7 @@ if($kycStatus == "pending" || $kycStatus == "approved"){
         </div>
     <?php endif; ?>
 
-    <?php if ($canShowForm == true): ?>
+    <?php if ($canShowForm): ?>
     <!-- Main Verification Form -->
     <div class="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
         <!-- Form Header -->
