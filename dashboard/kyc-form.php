@@ -111,6 +111,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $status = 'pending';
 
+        $sqlus = "UPDATE users set kyc_status = '$status' WHERE id = '$user_id'";
+        $queryus = mysqli_query($conn,$sqlus);
+
         $sql = "INSERT INTO kyc_submissions (
                     user_id,
                     first_name,
