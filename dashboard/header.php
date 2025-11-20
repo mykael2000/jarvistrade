@@ -264,7 +264,7 @@ include("function.php");
 
             <div class="max-h-[60vh] overflow-y-auto">
               
-                              <a href="https://jarvistradepro.com/notifications/1493" class="block border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                              <a href="notifications.php" class="block border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
                   <div class="px-4 py-3 bg-blue-50 dark:bg-blue-900/10">
                     <div class="flex items-start">
                       <div class="flex-shrink-0 mt-0.5">
@@ -286,7 +286,7 @@ include("function.php");
                     </div>
                   </div>
                 </a>
-                              <a href="https://jarvistradepro.com/notifications/1491" class="block border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                              <a href="notifications.php" class="block border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
                   <div class="px-4 py-3 bg-blue-50 dark:bg-blue-900/10">
                     <div class="flex items-start">
                       <div class="flex-shrink-0 mt-0.5">
@@ -308,7 +308,7 @@ include("function.php");
                     </div>
                   </div>
                 </a>
-                              <a href="https://jarvistradepro.com/notifications/1291" class="block border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                              <a href="notifications.php" class="block border-b border-gray-100 dark:border-gray-700 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
                   <div class="px-4 py-3 bg-blue-50 dark:bg-blue-900/10">
                     <div class="flex items-start">
                       <div class="flex-shrink-0 mt-0.5">
@@ -786,7 +786,7 @@ include("function.php");
                                                                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
                                         Complete your identity verification to unlock full trading features
                                     </p>
-                                    <a href="verify-account"
+                                    <a href="verify-account.php"
                                        class="inline-flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200">
                                         <i data-lucide="shield-check" class="w-4 h-4"></i>
                                         <span>Verify Now</span>
