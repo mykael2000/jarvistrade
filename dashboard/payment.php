@@ -52,7 +52,7 @@ if(isset($_POST['proofsub'])){
         // Insert file name into the database
         $sql = "INSERT into proof (user_id, email, qrcode) VALUES ('$user_id','$user_email','$file_name')";
         if ($conn->query($sql) === true) {
-            $message = "<p class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>File uploaded and record inserted successfully.</p>";
+            $message = "<p class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>Proof of Deposit Uploaded Successfully. Kindly wait for a few network confirmations for your deposit to appear in your balance.</p>";
         } else {
             $message = "<p class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>Error: " . $sql . "<br>" . $conn->error."</p>";
         }
