@@ -229,10 +229,10 @@ include("function.php");
                 <i data-lucide="minus-circle" class="w-4 h-4 mr-3 text-red-500"></i>
                 Withdraw
               </a>
-              <a href="trade.php" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
+              <!-- <a href="trade.php" class="flex items-center px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-md">
                 <i data-lucide="trending-up" class="w-4 h-4 mr-3 text-blue-500"></i>
                 Trade Markets
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
@@ -619,7 +619,7 @@ include("function.php");
                 <span>Trading & Markets</span>
             </div>
             <ul class="space-y-1">
-                <li>
+                <!-- <li>
                     <a href="trade.php"
                        class="group relative flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 ">
                         <i data-lucide="candlestick-chart" class="w-5 h-5 mr-3"></i>
@@ -632,7 +632,7 @@ include("function.php");
                             Real-time market trading
                         </div>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="copytrade.php"
                        class="group relative flex items-center px-3 py-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/50 transition-colors duration-150 ">
