@@ -390,13 +390,7 @@ $query = mysqli_query($conn, $sql);
 
                         </a>
                     </li>
-                    <li class="treeview">
-                        <a href="coin_wallet.php">
-                            <i class="fa fa-files-o"></i>
-                            <span>Edit Token Wallets</span>
-
-                        </a>
-                    </li>
+                    
                     <li class="treeview">
                         <a href="btcwallet.php">
                             <i class="fa fa-files-o"></i>
