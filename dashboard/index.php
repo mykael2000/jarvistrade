@@ -83,7 +83,7 @@
                         </div>
                     <?php }else{ ?>
                         <div class="inline-flex items-center px-2 py-1 text-xs rounded-full bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 animate-pulse">
-                            <i data-lucide="alert-circle" class="w-3 h-3 mr-1"></i>
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
                             <span class="font-medium">Verified</span>
                         </div>
                     <?php } ?>
