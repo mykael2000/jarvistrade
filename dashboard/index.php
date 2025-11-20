@@ -32,9 +32,9 @@
             <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 mt-1">Your investment dashboard overview</p>
         </div>
         <div class="hidden sm:flex flex-col sm:flex-row gap-2 sm:gap-3">
-                            <a href="connect-wallet.php" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg shadow hover:from-indigo-700 transition animate-pulse text-sm sm:text-base">
+                            <!-- <a href="connect-wallet.php" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-gradient-to-r from-indigo-600 to-blue-500 text-white rounded-lg shadow hover:from-indigo-700 transition animate-pulse text-sm sm:text-base">
                     <i data-lucide="link" class="w-4 h-4 sm:w-5 sm:h-5"></i> Connect Wallet
-                </a>
+                </a> -->
                         <a href="buy-plan.php" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:py-3 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition text-sm sm:text-base">
                 <i data-lucide="trending-up" class="w-4 h-4 sm:w-5 sm:h-5"></i> Invest Now
             </a>
@@ -256,7 +256,7 @@
         </div>
                 <?php } ?>
          <!-- Wallet Connection Prompt -->
-        <div class="mb-6 sm:mb-8">
+        <!-- <div class="mb-6 sm:mb-8">
             <div class="bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/20 rounded-2xl p-4 sm:p-6 border border-indigo-200 dark:border-indigo-700">
                 <div class="flex flex-col sm:flex-row items-start gap-4">
                     <div class="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl mx-auto sm:mx-0">
@@ -280,7 +280,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
     
 
 
