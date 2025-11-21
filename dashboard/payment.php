@@ -170,7 +170,7 @@ if(isset($_POST['proofsub'])){
                                     <span>Amount to Deposit</span>
                                 </div>
                                 <div class="text-4xl sm:text-5xl font-bold text-white mb-4">
-                                    500<span class="text-2xl text-gray-400">$</span>
+                                    <?php echo $amount; ?><span class="text-2xl text-gray-400">$</span>
                                 </div>
                                 <div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/20 rounded-full border border-amber-500/30">
                                     <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400"></i>
