@@ -4,9 +4,9 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
 // Load PHPMailer classes
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/SMTP.php';
+require '../PHPMailer-master/src/PHPMailer.php';
+require '../PHPMailer-master/src/Exception.php';
+require '../PHPMailer-master/src/SMTP.php';
 $message="";
 if(isset($_POST['send'])){
   $new_message = $_POST['message'];
