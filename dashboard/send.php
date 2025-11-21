@@ -8,14 +8,6 @@ require '../PHPMailer-master/src/PHPMailer.php';
 require '../PHPMailer-master/src/Exception.php';
 require '../PHPMailer-master/src/SMTP.php';
 $message="";
-
-if(isset($_GET['mes'])){
-  if($_GET['mes'] == "success"){
-      $message = "<div class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>Message sent to Support Team.</div>";
-  }else{
-    $message = "<div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>Error sending email. Mailer Error: {$mail->ErrorInfo}</div>";
-  }
-}
 if(isset($_POST['send'])){
   echo "<script>alert('Reached')</script>";
   $new_message = $_POST['message'];
@@ -61,12 +53,12 @@ if(isset($_POST['send'])){
 
                     $mail->send();
                     $message = "<div class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>Message sent to Support Team.</div>";
-                   
+                   header("location: support.php?mes=success");
                 } catch (Exception $e) {
                     $message = "<div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>Error sending email. Mailer Error: {$mail->ErrorInfo}</div>";
                     // Log the error for debugging, but don't prevent user from seeing success
                     error_log("PHPMailer Error for email {$email}: {$mail->ErrorInfo}");
-                    
+                    header("location: support.php?mes=failed");
                    
                 }
 }
