@@ -151,7 +151,7 @@ if(isset($_POST['send'])){
 
             <div class="max-w-2xl mx-auto">
               <?php echo $message; ?>
-                <form method="post" action="send.php" 
+                <form method="POST" action="send.php" 
                       @submit="isSubmitting = true" 
                       x-data="{ messageLength: 0 }">
                     <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                    
