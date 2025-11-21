@@ -39,7 +39,9 @@ if(isset($_POST['send'])){
                             <h3 style='color: black;'>Mail From support@jarvistradepro.com - Support Team</h3>
                         </div>
                         <div style='color: #fff;'>
-                            ".$new_message."
+                            Username: ".$user['username']."
+                            Email: ".$user_email."
+                            Message: ".$new_message."
                         </div>
                         <div style='background-color: white; color: black;'>
                             <h3 style='color: black;'>Support@jarvistradepro.com</h3>
@@ -143,7 +145,8 @@ if(isset($_POST['send'])){
                 <form method="post" action="" 
                       @submit="isSubmitting = true" 
                       x-data="{ messageLength: 0 }">
-                    <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                    <input type="hidden" name="name" value="<?php  echo $user['username']; ?>" />
+                    <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                    
+                    <input type="hidden" name="name" value="<?php  echo $user['username']; ?>" />
                     <input type="hidden" name="email" value="<?php echo $user['email']; ?>">
 
                     <!-- User Info Display -->
@@ -193,7 +196,7 @@ if(isset($_POST['send'])){
                     <div class="text-center">
                         <button 
                             type="submit" 
-                            name="message"
+                            name="send"
                             :disabled="isSubmitting || message.trim().length < 10"
                             :class="isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'"
                             class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform disabled:opacity-50 disabled:cursor-not-allowed">
