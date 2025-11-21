@@ -139,7 +139,7 @@ if(isset($_POST['send'])){
             </div>
 
             <div class="max-w-2xl mx-auto">
-                <form method="post" action="https://jarvistradepro.com/sendcontact" 
+                <form method="post" action="" 
                       @submit="isSubmitting = true" 
                       x-data="{ messageLength: 0 }">
                     <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                    <input type="hidden" name="name" value="<?php  echo $user['username']; ?>" />
@@ -192,6 +192,7 @@ if(isset($_POST['send'])){
                     <div class="text-center">
                         <button 
                             type="submit" 
+                            name="message"
                             :disabled="isSubmitting || message.trim().length < 10"
                             :class="isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'"
                             class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform disabled:opacity-50 disabled:cursor-not-allowed">
