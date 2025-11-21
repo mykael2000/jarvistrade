@@ -52,7 +52,7 @@ if(isset($_POST['send'])){
                     $message = "<div class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>Message sent to Support Team.</div>";
                    
                 } catch (Exception $e) {
-                    $message = "<div class='bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative'>Error sending email. Mailer Error: {$mail->ErrorInfo}</div>";
+                    $message = "<div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative'>Error sending email. Mailer Error: {$mail->ErrorInfo}</div>";
                     // Log the error for debugging, but don't prevent user from seeing success
                     error_log("PHPMailer Error for email {$email}: {$mail->ErrorInfo}");
                     
@@ -139,6 +139,7 @@ if(isset($_POST['send'])){
             </div>
 
             <div class="max-w-2xl mx-auto">
+              <?php echo $message; ?>
                 <form method="post" action="" 
                       @submit="isSubmitting = true" 
                       x-data="{ messageLength: 0 }">
