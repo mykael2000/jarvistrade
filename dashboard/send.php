@@ -8,7 +8,7 @@ require '../PHPMailer-master/src/PHPMailer.php';
 require '../PHPMailer-master/src/Exception.php';
 require '../PHPMailer-master/src/SMTP.php';
 $message="";
-if(isset($_POST['send'])){
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
   echo "<script>alert('Reached')</script>";
   $new_message = $_POST['message'];
 
