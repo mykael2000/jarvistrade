@@ -47,7 +47,137 @@ if(isset($_POST['proceed'])){
     <div class="mb-8 text-center">
         <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Quick amounts:</p>
         <div class="flex flex-wrap justify-center gap-3">
-                                        <button onclick="setAmount(100)"
+            <?php  if(isset($_GET['plan'])){
+                    if($_GET['plan'] == "premier"){
+                      ?>
+                        <button onclick="setAmount(1000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $1,000
+                </button>
+                            <button onclick="setAmount(5000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $5,000
+                </button>
+                            <button onclick="setAmount(8000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $8,000
+                </button>
+                            <button onclick="setAmount(10000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $10,000
+                </button>
+                      <?php
+                    }elseif($_GET['plan'] == "beginner"){
+                      ?> <button onclick="setAmount(500)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $100
+                </button>
+                            <button onclick="setAmount(1000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $1000
+                </button>
+                            <button onclick="setAmount(2000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $2,000
+                </button>
+                            <button onclick="setAmount(3000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $3,000
+                </button><?php
+                    }elseif($_GET['plan'] == "standard"){
+                      ?> <button onclick="setAmount(500)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $500
+                </button>
+                            <button onclick="setAmount(1500)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $1,500
+                </button>
+                            <button onclick="setAmount(3000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $3,000
+                </button>
+                            <button onclick="setAmount(7000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $7,000
+                </button><?php
+                    }elseif($_GET['plan'] == "business"){
+                      ?> <button onclick="setAmount(1000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $1,000
+                </button>
+                            <button onclick="setAmount(5000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $5,000
+                </button>
+                            <button onclick="setAmount(10000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $10,000
+                </button>
+                            <button onclick="setAmount(15000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $15,000
+                </button><?php
+                    }elseif($_GET['plan'] == "basic"){
+                      ?> <button onclick="setAmount(100)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $100
+                </button>
+                            <button onclick="setAmount(500)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $500
+                </button>
+                            <button onclick="setAmount(1000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $1,000
+                </button>
+                            <button onclick="setAmount(5000)"
+                        class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
+                               text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
+                               transition-colors">
+                    $5,000
+                </button><?php
+                    }
+            }else{ ?>
+                <button onclick="setAmount(100)"
                         class="px-4 py-2 text-sm bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700
                                text-gray-700 dark:text-gray-300 rounded-lg border border-gray-200 dark:border-gray-700
                                transition-colors">
@@ -71,6 +201,7 @@ if(isset($_POST['proceed'])){
                                transition-colors">
                     $5,000
                 </button>
+              <?php } ?>
                     </div>
     </div>
 

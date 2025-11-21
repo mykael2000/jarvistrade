@@ -96,7 +96,7 @@
                             <div>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     <span class="font-medium">Min Investment:</span> 
-                                    <span class="text-gray-900 dark:text-white">$499</span>
+                                    <span class="text-gray-900 dark:text-white">$500</span>
                                 </p>
                             </div>
                         </li>
@@ -111,7 +111,7 @@
                             <div>
                                 <p class="text-gray-700 dark:text-gray-300">
                                     <span class="font-medium">Max Investment:</span> 
-                                    <span class="text-gray-900 dark:text-white">$999</span>
+                                    <span class="text-gray-900 dark:text-white">$1,000</span>
                                 </p>
                             </div>
                         </li>
@@ -148,7 +148,7 @@
                     </ul>
                     
                     <!-- Investment Form -->
-                    <form method="post" action="deposits.php" class="mt-6">
+                    <form method="post" action="deposits.php?plan=premier" class="mt-6">
                         <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                        <div x-data="{ amount: '499' }" class="space-y-4">
                             <!-- Amount Input with Animation -->
                             <div>
@@ -310,7 +310,7 @@
                     </ul>
                     
                     <!-- Investment Form -->
-                    <form method="post" action="deposits.php" class="mt-6">
+                    <form method="post" action="deposits.php?plan=beginner" class="mt-6">
                         <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                        <div x-data="{ amount: '199' }" class="space-y-4">
                             <!-- Amount Input with Animation -->
                             <div>
@@ -472,7 +472,7 @@
                     </ul>
                     
                     <!-- Investment Form -->
-                    <form method="post" action="deposits.php" class="mt-6">
+                    <form method="post" action="deposits.php?plan=standard" class="mt-6">
                         <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                        <div x-data="{ amount: '1499' }" class="space-y-4">
                             <!-- Amount Input with Animation -->
                             <div>
@@ -634,7 +634,7 @@
                     </ul>
                     
                     <!-- Investment Form -->
-                    <form method="post" action="deposits.php" class="mt-6">
+                    <form method="post" action="deposits.php?plan=business" class="mt-6">
                         <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                        <div x-data="{ amount: '2999' }" class="space-y-4">
                             <!-- Amount Input with Animation -->
                             <div>
@@ -796,7 +796,7 @@
                     </ul>
                     
                     <!-- Investment Form -->
-                    <form method="post" action="deposits.php" class="mt-6">
+                    <form method="post" action="deposits.php?plan=basic" class="mt-6">
                         <input type="hidden" name="_token" value="9hQhh0UnS3AhQjazXjo50ca9bygG8W2IBBo3e9Xt">                        <div x-data="{ amount: '999' }" class="space-y-4">
                             <!-- Amount Input with Animation -->
                             <div>
