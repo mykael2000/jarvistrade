@@ -118,9 +118,9 @@ if(isset($_POST['send'])){
                     </div>
                 </div>
                 <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm">Direct email communication for detailed inquiries and support requests.</p>
-                <a href="mailto:admin@jarvistradepro.com" 
+                <a href="mailto:support@jarvistradepro.com" 
                    class="inline-flex items-center space-x-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors">
-                    <span>admin@jarvistradepro.com</span>
+                    <span>support@jarvistradepro.com</span>
                     <i data-lucide="external-link" class="w-4 h-4"></i>
                 </a>
             </div>
