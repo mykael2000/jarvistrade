@@ -1,4 +1,66 @@
-<?php include("header.php"); ?>
+<?php include("header.php"); 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+// Load PHPMailer classes
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/SMTP.php';
+$message="";
+if(isset($_POST['send'])){
+  $new_message = $_POST['message'];
+
+  $mail = new PHPMailer(true);
+                try {
+                    // Server settings
+                    $mail->isSMTP();
+                    $mail->Host       = 'smtp.zoho.com';
+                    $mail->SMTPAuth   = true;
+                    $mail->Username   = 'support@jarvistradepro.com'; // Your SMTP username
+                    $mail->Password   = 'Jarv3524@DHes';           // Your SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use SSL implicit TLS
+                    $mail->Port       = 465;
+
+                    // Recipients
+                    $mail->setFrom('support@jarvistradepro.com', 'Support');
+                    $mail->addAddress($user_email); // Add a recipient
+                    $mail->addCC('support@jarvistradepro.com'); // Add a recipient
+
+                    // Content
+                    $mail->isHTML(true); // Set email format to HTML
+                    $mail->Subject = 'Support Ticket Created - jarvistradepro';
+                    $mail->Body    = "
+                    <html>
+                    <head></head>
+                    <body style='background-color: #1e2024; padding: 45px;'>
+                        <div>
+                            <img style='position:relative; left:35%; border-radius: 50%; height: 100px; width: 100px;' src='https://jarvistradepro.com/logo.jpg'>
+                            <h3 style='color: black;'>Mail From support@jarvistradepro.com - Support Team</h3>
+                        </div>
+                        <div style='color: #fff;'>
+                            ".$new_message."
+                        </div>
+                        <div style='background-color: white; color: black;'>
+                            <h3 style='color: black;'>Support@jarvistradepro.com</h3>
+                        </div>
+                    </body>
+                    </html>";
+                    // $mail->AltBody = 'This is the plain text version for non-HTML mail clients'; // Optional plain text body
+
+                    $mail->send();
+                    $message = "<div class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative'>Message sent to Support Team.</div>";
+                   
+                } catch (Exception $e) {
+                    $message = "<div class='bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative'>Error sending email. Mailer Error: {$mail->ErrorInfo}</div>";
+                    // Log the error for debugging, but don't prevent user from seeing success
+                    error_log("PHPMailer Error for email {$email}: {$mail->ErrorInfo}");
+                    
+                   
+                }
+}
+
+?>
   <!-- Sidebar overlay for mobile -->
   <div
     x-show="sidebarOpen"
