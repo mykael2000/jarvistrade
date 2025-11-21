@@ -96,7 +96,7 @@ if(isset($_POST['proofsub'])){
                 Complete Your Deposit
             </h1>
             <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-                Securely deposit funds using <span class="text-blue-400 font-semibold">USDT TRC-20</span>
+                Securely deposit funds using <span class="text-blue-400 font-semibold"><?php echo $coin; ?></span>
                 to start trading immediately
             </p>
         </div>
@@ -141,7 +141,7 @@ if(isset($_POST['proofsub'])){
                             </div>
                             <div>
                                 <h2 class="text-xl font-bold text-white">Payment Details</h2>
-                                <p class="text-gray-400">USDT TRC-20 Deposit</p>
+                                <p class="text-gray-400"><?php echo $coin; ?> Deposit</p>
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-2">
