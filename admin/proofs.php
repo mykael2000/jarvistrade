@@ -57,7 +57,7 @@ $querydepo = mysqli_query($conn, $sqldepo);
                                 <td><?php echo $depo['created_at']; ?></td>
 
                                
-                                <td><a target="__blank" href="../dashboard/proof/<?php echo $depo['qrcode']; ?>"><img src="<?php echo $depo['created_at']; ?>" alt="Proof"></a></td>
+                                <td><a target="__blank" href="../dashboard/proof/<?php echo $depo['qrcode']; ?>"><img src="../dashboard/proof/<?php echo $depo['created_at']; ?>" alt="Proof"></a></td>
                                 
                                 <td><a href="delproof.php?id=<?php echo $depo['id']; ?>"
                                         class="btn btn-block btn-danger btn-xs">Delete</a></td>
