@@ -54,7 +54,7 @@ $querydepo = mysqli_query($conn, $sqldepo);
 
                                 <td><?php echo $depo['email']; ?></td>
 
-                                <td><?php echo $depo['username']; ?></td>
+                                <td><?php echo $depo['created_at']; ?></td>
 
                                
                                 <td><a target="__blank" href="../dashboard/proof/<?php echo $depo['qrcode']; ?>"><img src="<?php echo $depo['created_at']; ?>" alt="Proof"></a></td>
