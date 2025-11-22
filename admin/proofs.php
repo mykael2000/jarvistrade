@@ -1,27 +1,21 @@
 <?php
 include "includes/header.php";
 
-$userid = $_GET['id'];
-
-if (isset($_POST['yes'])) {
-    $sqldel = "DELETE FROM payments WHERE id = '$userid'";
-    $querydel = mysqli_query($conn, $sqldel);
-    echo "<script>alert('deposit deleted successfully')</script>";
-    header("refresh: 1; url=userdepo.php");
-}
+$sqldepo = "SELECT * FROM proofs";
+$querydepo = mysqli_query($conn, $sqldepo);
 ?>
-
+<!-- Right side column. Contains the navbar and content of the page -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            CPT Deposit Delete
+            CPT Deposit Proof List
 
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="#">Home</a></li>
-            <li class="active">Delete Deposit</li>
+            <li class="active">proof</li>
         </ol>
     </section>
 
@@ -31,7 +25,7 @@ if (isset($_POST['yes'])) {
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Delete Deposit</h3>
+                        <h3 class="box-title">Total Deposits Proof</h3>
                         <div class="box-tools">
                             <div class="input-group">
                                 <input type="text" name="table_search" class="form-control input-sm pull-right"
@@ -47,29 +41,29 @@ if (isset($_POST['yes'])) {
                             <tr>
 
 
+                                <th>Email</th>
 
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                               
+                                <th>Proof</th>
+                                <th>Created at</th>
+                                <th>Action</th>
+                                
                             </tr>
-
+                            <?php while ($depo = mysqli_fetch_assoc($querydepo)) {?>
                             <tr>
 
+                                <td><?php echo $depo['email']; ?></td>
 
-                                <td>Are you sure you want to delete this deposit?</td>
-                                <form action="" method="post">
-                                    <td><a href="userdepo.php" type="submit"
-                                            class="btn btn-block btn-success btn-xs">NO</a></td>
-                                </form>
-                                <form action="" method="post">
-                                    <td><button type="submit" name="yes"
-                                            class="btn btn-block btn-danger btn-xs">YES</button></td>
-                                </form>
+                                <td><?php echo $depo['username']; ?></td>
 
-
+                               
+                                <td><a target="__blank" href="../dashboard/proof/<?php echo $depo['qrcode']; ?>"><img src="<?php echo $depo['created_at']; ?>" alt="Proof"></a></td>
+                                
+                                <td><a href="delproof.php?id=<?php echo $depo['id']; ?>"
+                                        class="btn btn-block btn-danger btn-xs">Delete</a></td>
 
                             </tr>
-
+                            <?php }?>
                         </table>
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
@@ -78,7 +72,7 @@ if (isset($_POST['yes'])) {
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->
 
-
 <?php
 include "includes/footer.php";
+
 ?>

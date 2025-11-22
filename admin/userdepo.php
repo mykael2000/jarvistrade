@@ -1,7 +1,7 @@
 <?php
 include "includes/header.php";
 
-$sqldepo = "SELECT * FROM deposits";
+$sqldepo = "SELECT * FROM payments";
 $querydepo = mysqli_query($conn, $sqldepo);
 ?>
 <!-- Right side column. Contains the navbar and content of the page -->
@@ -42,10 +42,10 @@ $querydepo = mysqli_query($conn, $sqldepo);
 
 
                                 <th>Tranx ID</th>
-                                <th>Username</th>
+                                <th>Email</th>
 
                                 <th>Amount</th>
-                                <th>Paid Via</th>
+                          
                                 <th>Plan</th>
                                 <th>Status</th>
                                 <th>Created at</th>
@@ -57,10 +57,10 @@ $querydepo = mysqli_query($conn, $sqldepo);
 
                                 <td><?php echo $depo['tranx_id']; ?></td>
 
-                                <td><?php echo $depo['username']; ?></td>
+                                <td><?php echo $depo['email']; ?></td>
 
                                 <td><?php echo $depo['amount']; ?></td>
-                                <td><?php echo $depo['paid_via']; ?></td>
+                                
                                 <td><?php echo $depo['plan']; ?></td>
                                 <td><?php echo $depo['status']; ?></td>
                                 <td><?php echo $depo['created_at']; ?></td>

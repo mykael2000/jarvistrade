@@ -4,7 +4,7 @@ include "includes/header.php";
 $userid = $_GET['id'];
 
 if (isset($_POST['yes'])) {
-    $sqldel = "DELETE FROM payments WHERE id = '$userid'";
+    $sqldel = "DELETE FROM proofs WHERE id = '$userid'";
     $querydel = mysqli_query($conn, $sqldel);
     echo "<script>alert('deposit deleted successfully')</script>";
     header("refresh: 1; url=userdepo.php");
@@ -31,7 +31,7 @@ if (isset($_POST['yes'])) {
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Delete Deposit</h3>
+                        <h3 class="box-title">Delete Deposit Proof</h3>
                         <div class="box-tools">
                             <div class="input-group">
                                 <input type="text" name="table_search" class="form-control input-sm pull-right"
@@ -56,9 +56,9 @@ if (isset($_POST['yes'])) {
                             <tr>
 
 
-                                <td>Are you sure you want to delete this deposit?</td>
+                                <td>Are you sure you want to delete this deposit proof?</td>
                                 <form action="" method="post">
-                                    <td><a href="userdepo.php" type="submit"
+                                    <td><a href="proof.php" type="submit"
                                             class="btn btn-block btn-success btn-xs">NO</a></td>
                                 </form>
                                 <form action="" method="post">
