@@ -362,7 +362,7 @@ $query = mysqli_query($conn, $sql);
                             <li><a href="editusers.php"><i class="fa fa-circle-o"></i>Edit users</a>
                             </li>
                             <li><a href="userdepo.php"><i class="fa fa-circle-o"></i>User Deposits</a></li>
-
+                            <li><a href="proofs.php"><i class="fa fa-circle-o"></i>User Deposits Proof</a></li>
                             <li><a href="cryptowith.php"><i class="fa fa-circle-o"></i>Withdrawals</a></li>
                             <li><a href="userkyc.php"><i class="fa fa-circle-o"></i>Users KYC</a></li>
 
