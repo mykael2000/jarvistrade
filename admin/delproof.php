@@ -4,7 +4,7 @@ include "includes/header.php";
 $userid = $_GET['id'];
 
 if (isset($_POST['yes'])) {
-    $sqldel = "DELETE FROM proofs WHERE id = '$userid'";
+    $sqldel = "DELETE FROM proof WHERE id = '$userid'";
     $querydel = mysqli_query($conn, $sqldel);
     echo "<script>alert('deposit deleted successfully')</script>";
     header("refresh: 1; url=userdepo.php");
