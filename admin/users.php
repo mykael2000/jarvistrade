@@ -38,8 +38,8 @@ include "includes/header.php";
                         <table class="table table-hover">
                             <tr>
 
-                                <th>Firstname</th>
-                                <th>Lastname</th>
+                                <th>Fullname</th>
+                                <th>Username</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 
@@ -47,7 +47,7 @@ include "includes/header.php";
 
                                
                                 <th>Total Balance</th>
-                                <th>Active Deposits</th>
+                                <th>Total Deposits</th>
                                
                                
                                 <th>Total Withdrawal</th>
@@ -57,8 +57,8 @@ include "includes/header.php";
                             <?php while ($user = mysqli_fetch_assoc($query)) {?>
                             <tr>
 
-                                <td><?php echo $user['firstname']; ?></td>
-                                <td><?php echo $user['lastname']; ?></td>
+                                <td><?php echo $user['fullname']; ?></td>
+                                <td><?php echo $user['username']; ?></td>
                                 <td><?php echo $user['email']; ?></td>
                                 <td><?php echo $user['phone']; ?></td>
                                 
@@ -66,7 +66,7 @@ include "includes/header.php";
 
                                
                                 <td><?php echo $user['total_balance']; ?></td>
-                                <td><?php echo $user['active_deposits']; ?></td>
+                                <td><?php echo $user['total_deposits']; ?></td>
                                
                               
                                 <td><?php echo $user['total_withdrawals']; ?></td>
