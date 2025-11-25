@@ -1428,8 +1428,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                                                <tr class="group hover:bg-gray-50 dark:hover:bg-gray-900 transition">
-                            <!-- Trade Details -->
+                        <!-- <tr class="group hover:bg-gray-50 dark:hover:bg-gray-900 transition">
+                          
                             <td class="py-3 px-2 sm:px-4 align-top">
                                 <div class="flex items-center gap-2">
                                     <span class="inline-flex items-center px-2 py-1 rounded text-xs font-semibold
@@ -1440,40 +1440,18 @@
                                 </div>
                                 <div class="text-xs text-gray-400 mt-1">Fri, Oct 3, 2025 11:55 AM</div>
                             </td>
-                            <!-- Amount -->
+                    
                             <td class="py-3 px-2 sm:px-4 align-top font-semibold text-green-600">
                                 $ 5,737.50
                             </td>
-                            <!-- Status/Leverage -->
+                           
                             <td class="py-3 px-2 sm:px-4 align-top">
                                                                     <span class="inline-flex items-center px-2 py-1 rounded bg-blue-100 text-red-700 dark:bg-blue-900/20 dark:text-red-400 text-xs font-medium">Buy</span>
                                     <span class="text-xs ml-1 hidden sm:inline">Leverage: 1:10</span>
                                                                 <div class="text-xs text-gray-400 mt-1 hidden sm:block">Fri, Oct 3, 2025 11:55 AM</div>
                             </td>
-                        </tr>
-                                                <tr class="group hover:bg-gray-50 dark:hover:bg-gray-900 transition">
-                            <!-- Trade Details -->
-                            <td class="py-3 px-2 sm:px-4 align-top">
-                                <div class="flex items-center gap-2">
-                                    <span class="inline-flex items-center px-2 py-1 rounded text-xs font-semibold
-                                        bg-green-50 text-green-600 dark:bg-green-900/20">
-                                        <i data-lucide="arrow-up" class="w-3 h-3 sm:w-4 sm:h-4 mr-1"></i>
-                                        BGB/USD
-                                    </span>
-                                </div>
-                                <div class="text-xs text-gray-400 mt-1">Thu, Oct 2, 2025 5:59 PM</div>
-                            </td>
-                            <!-- Amount -->
-                            <td class="py-3 px-2 sm:px-4 align-top font-semibold text-green-600">
-                                $ 50.00
-                            </td>
-                            <!-- Status/Leverage -->
-                            <td class="py-3 px-2 sm:px-4 align-top">
-                                                                    <span class="inline-flex items-center px-2 py-1 rounded bg-blue-100 text-red-700 dark:bg-blue-900/20 dark:text-red-400 text-xs font-medium">Buy</span>
-                                    <span class="text-xs ml-1 hidden sm:inline">Leverage: 1:20</span>
-                                                                <div class="text-xs text-gray-400 mt-1 hidden sm:block">Thu, Oct 2, 2025 5:59 PM</div>
-                            </td>
-                        </tr>
+                        </tr> -->
+                      
                                             </tbody>
                 </table>
             </div>
